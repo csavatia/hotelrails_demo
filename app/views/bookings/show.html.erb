@@ -1,0 +1,35 @@
+<h1 style="text-align: center;"> My Bookings </h1>
+<table class="table">
+  <thead class="thead-dark ">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">email</th>
+      <th scope="col">Room Type</th>
+      <th scope="col">Adult</th>
+      <th scope="col">Children</th>
+      <th scope="col">Start Date</th>
+      <th scope="col">Last Date</th>
+    </tr>
+  </thead>
+  <% @bookings = current_user.bookings %>
+  <% @bookings.each do |booking| %>
+  <tbody>
+    <tr >
+      <th scope="row"></th>
+      <td><%= booking.user.email %></td>
+      <td><%= booking.room_type %></td>
+      <td><%= booking.adults %></td>
+      <td><%= booking.children %></td>
+      <td><%= booking.start_date.strftime("%d/%m/%Y") %></td>
+      <td><%= booking.last_date.strftime("%d/%m/%Y") %></td>
+      <%
+=begin%>
+ <td> <button class="btn btn-secondary"> </i><%=  link_to 'cancel', booking, method: :delete, data: { confirm: 'Are you sure?' }, class: "fas fa-trash" %> </i> </button></td> 
+<%
+=end%>
+    </tr>
+  </tbody>
+  <%end%>
+</table>
+
+<%= link_to "New Booking", bookings_path %>

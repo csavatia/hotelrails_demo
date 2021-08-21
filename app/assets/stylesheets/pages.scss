@@ -1,0 +1,46 @@
+// Place all the styles related to the pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+// Place all the styles related to the pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+nav li ul {
+    transition-property: transform;
+    transition-duration: 200ms;
+    transition-timing-function: ease-in;
+    transition-delay: 50ms;
+    transform: scale(1, 0);
+    transform-origin: top center;
+}
+
+nav li:hover ul {
+    transform: scale(1, 1);
+}
+
+.banner {
+    background: image-url('container2.jpg') no-repeat;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    -ms-background-size: cover;
+    min-height: 670px;
+    position: relative;
+}
+
+.banner-top {
+    position: absolute;
+    width: 35%;
+    padding: 2em 30px;
+    background: rgba(228, 232, 246, .56);
+    top: 20.5%;
+    left: 13.5%;
+
+    h1 {
+        font-size: 2.4em;
+        font-weight: 600;
+        margin: 0;
+        color: #000
+    }
+}

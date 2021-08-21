@@ -1,0 +1,21 @@
+<div class="banner-top">
+    <h1> For Booking</h1>
+    <%= form_for( :booking , remote: true) do |f| %>
+            <%= f.label :room_type %> : 
+            <%= f.select :room_type, Booking.room_type.options %> <br />
+
+            <%= f.label :adults %> : 
+            <%= f.select :adults, {1 => 1, 2 => 2, 3 => 3, 4 => 4} %> <br />
+
+            <%= f.label :children %>
+            <%= f.select :children, {1 => 1, 2 => 2, 3 => 3, 4 => 4} %> <br />
+                
+            <%= f.label :start_date, "Check in" %>
+            <%= f.date_field :start_date %><br />
+
+            <%= f.label :last_date, "Check Out" %>
+            <%= f.date_field :last_date %><br />
+
+            <%= f.submit "Create Booking" %>
+    <% end %>
+</div>

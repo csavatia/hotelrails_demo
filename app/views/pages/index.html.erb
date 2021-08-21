@@ -1,0 +1,30 @@
+<h1 style="text-align: center;"> CURRENT BOOKINGS </h1>
+<table class="table">
+  <thead class="thead-dark ">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">email</th>
+      <th scope="col">Room Type</th>
+      <th scope="col">Adult</th>
+      <th scope="col">Children</th>
+      <th scope="col">Start Date</th>
+      <th scope="col">Last Date</th>
+    </tr>
+  </thead>
+  <% @bookings = Booking.all %>
+  <% @bookings.each do |booking| %>
+  <%= @bookings.count%>
+  <tbody>
+    <tr >
+      <th scope="row"></th>
+      <td><%= booking.user.email %></td>
+      <td><%= booking.room_type %></td>
+      <td><%= booking.adults %></td>
+      <td><%= booking.children %></td>
+      <td><%= booking.start_date.strftime("%d/%m/%Y") %></td>
+      <td><%= booking.last_date.strftime("%d/%m/%Y") %></td>
+      <td><%=  link_to 'Cancel booking', booking, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-secondary'%></td>
+    </tr>
+  </tbody>
+  <%end%>
+</table>
